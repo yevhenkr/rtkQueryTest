@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 
@@ -9,5 +8,13 @@ export function Counter() {
     const count = useAppSelector((state) => state.counter.value)
     const dispatch = useAppDispatch()
 
-    // omit rendering logic
+    return (
+        <div>
+            <div>
+                <button onClick={() => dispatch(decrement())}>-</button>
+                <span>{count}</span>
+                <button onClick={() => dispatch(increment())}>+</button>
+            </div>
+        </div>
+    );
 }
